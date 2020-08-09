@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}
+    View-{{ data.id }} | Handler
+{% endblock %}
+{% block content %}
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">Request Type</div>
+            <div class="col-lg-6">{{ data.request_type }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">Request Desc</div>
+            <div class="col-lg-6">{{ data.request_desc }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">City</div>
+            <div class="col-lg-6">{{ data.city }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">State</div>
+            <div class="col-lg-6">{{ data.state }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">Pin Code</div>
+            <div class="col-lg-6">{{ data.pin_code }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">Alternate Phone No.</div>
+            <div class="col-lg-6">{{ data.mobile_number }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">Status</div>
+            <div class="col-lg-6">{{ data.status }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">Remarks</div>
+            <div class="col-lg-6">{{ data.remarks }}</div>
+        </div>
+    </div>
+    <br>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4">Updated by</div>
+            <div class="col-lg-6">{{ data.request_date }}</div>
+        </div>
+    </div>
+
+    <div class="mx-auto" style="width:300px;">
+    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'handler:index' %}'">
+            Back
+        </button>
+    </div> 
+    
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+    Dashboard | Handler
+{% endblock %}
+{%block content %}
+    {% if queryset %}
+        <table id="view_data" class="table table-bordered table-striped">
+            <thead>
+                <th>Request ID</th>
+                <th>Request Type</th>
+                <th>Request Desc</th>
+                <th>Request Date</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                {% for query in queryset %}
+                    <tr>
+                        <td>{{ query.id }}</td>
+                        <td>{{ query.request_type }}</td>
+                        <td>{{ query.request_desc }}</td>
+                        <td>{{ query.request_date }}</td>
+                        <td>{{ query.status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <script>
+        $(document).ready( function () {
+            $('#view_data').DataTable({
+                paging: false,
+                searching: false
+            });
+        });
+    </script>
+{% endblock %}
